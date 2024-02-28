@@ -4,5 +4,5 @@ function isOdd(arr){//seems like a better name
     return arr
 }
 module.exports = {
-    isEven:isEven
+    isOdd:isOdd
 }
