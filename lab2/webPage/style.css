@@ -1,0 +1,89 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+nav {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 10px 5px 5px black;
+    z-index: 1;
+}
+
+
+nav ul li {
+    list-style-type: none;
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0c0d73;
+    transition: 0.5s;
+    font-size: 25px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+.text {
+    height: 50vh;
+    background-color: #e8dbdb;
+    font-size: 3vh;
+    padding: 40px;
+}
+.background {
+    background-image: url("./res/lab2/bg.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+footer {
+    text-align: center;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    background-color: #ffffff;
+
+}
+.other {
+    background-color: #f55b5b;
+    padding: 15px;
+}
+.kontakt {
+    padding: 15px;
+    background-color: white;
+}
+.logo-wrapper {
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 0;
+}
+
+.logo-js {
+    background: url("./res/lab2/js.jpg");
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+
+}
+
+
+.logo-html {
+    background: url("./res/lab2/html.png");
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+
+}
+
+
+
+
+
