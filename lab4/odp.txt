@@ -1,1 +1,1 @@
-aplikacja wydrukowała komunikat za pomocom ---
+aplikacja wydrukowała komunikat za pomocą mechanizmu obsługi zdarzeń http
