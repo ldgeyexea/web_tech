@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Technologie aplikacji webowych</title>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .background {
+      height: 30px;
+      width: 30px;
+    }
+
+    .text {
+
+      background-color: #e8dbdb;
+      font-size: 36px;
+      padding: 15px;
+    }
+
+    nav {
+      position: fixed;
+      background-color: #fff;
+      width: 100%;
+      box-shadow: 10px 5px 5px black;
+    }
+
+    nav ul li {
+      list-style-type: none;
+      display: inline;
+      margin-right: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #0d0fbf;
+      transition: 0.5s;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+    }
+    #charts{
+      width: 60%;
+      padding-left: 20%;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#result">result</a></li>
+    <li><a href="#chart">chart</a></li>
+  </ul>
+</nav>
+<section id="home"></section>
+
+<div class="background"></div>
+
+<section id="result" class="text">
+  <h2>Operation:<%= variant %>(<%= a %>,<%= b %>)</h2>
+  <h2>Result is:<%= result %></h2>
+
+
+</section>
+
+<div class="background"></div>
+
+<section id="chartFrame" class="text">
+  <div id="charts">
+  <h2> operation results history:<%= variant %></h2>
+
+    <canvas id="chart"></canvas>
+  </div>
+</section>
+
+
+<div class="background"></div>
+
+
+</section>
+<footer>
+  <p class="copy">Copyrights &copy; | 2024</p>
+</footer>
+<script>
+  // pobranie danych z serwera
+  const chartConfig = '<%-operationHistory%>';
+
+
+  // pobranie referencji do miejsa wyświetlenia
+  const ctx = document.querySelector("#chart").getContext('2d');
+
+
+
+
+  // sparsowanie danych otrzymanych z serwera w miejscu właściwości data
+  const configChart = {
+    type: 'line',
+    data: {
+      labels: [],
+      datasets: [{
+        data: JSON.parse(chartConfig),
+        label: "results",
+        borderColor: "#3e95cd",
+        fill: false
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          distribution: 'linear',
+        }]
+      },
+      legend: {
+        display: false
+      }
+    }
+  };
+
+  // zbudowanie wykresu
+  new Chart(ctx, configChart);
+</script>
+</body>
+</html>

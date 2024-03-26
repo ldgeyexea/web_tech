@@ -1,0 +1,25 @@
+{
+  "name": "lab5",
+  "version": "1.0.0",
+  "description": "server lab5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev":"nodemon index"
+  },
+  "keywords": [
+    "server",
+    "expresjs"
+  ],
+  "author": "Piotr Dawid",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.19.1",
+    "ejs": "3.1.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "type": "module"
+}
